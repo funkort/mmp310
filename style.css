@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css?family=Averia+Sans+Libre:700|Ubuntu&display=swap');
+
+
+body
+{
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+a
+{
+  text-decoration: none;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+  color: #580bf4;
+}
+
+/*fixed banner from 
+ *https://www.w3schools.com/howto/howto_css_fixed_menu.asp
+ *referenced on 09/04/2019
+*/
+.banner{
+  overflow: hidden;
+  background-color:white;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  height:5.5em;
+}
+.logo{
+  margin-top:20;
+  padding-right:40;
+  text-align: right;
+  font-size: 2em;
+  font-family: Averia Sans Libre, cursive;
+  color:#f40b32;
+}
+
+/*home graphic*/
+img{
+  max-width:100%; 
+  height:auto;
+  border-radius: 5px;
+}
+
+.graphic{
+    width:auto; 
+    text-align:center; 
+    padding:50px 270px;
+    margin-top:50px;
+}
+
+/* work section */
+
+
+
+.lang{
+	border:5px solid black;
+	padding:0px;
+	margin:10px;
+	border-radius: 5px;
+}
+
+.lang h3{
+	font-size:35px;
+	text-align: center;
+	color:black;
+    font-style: italic;
+    font-weight:20000
+}
+.container{
+	max-width: 1200px;
+	margin:0 auto;
+    padding-top:100px;
+}
+
+.container:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+.col{
+	float:left;
+}
+
+.c33{
+	width:33.333333%;
+}
+.c67{
+	width:66.666667%;
+}
+.c25{
+	width:25%;
+}
+.c50{
+	width:50%;
+}
+
+
+
+
+/*hamburger menu from 
+ *https://codepen.io/erikterwan/pen/EVzeRP
+ *referenced on 09/04/2019
+*/
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #f40b32;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 100px;
+  height:700px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #a7f40b;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}

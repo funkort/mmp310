@@ -5,7 +5,7 @@
 
 let font;
 var x = 0;
-var words = 'damn shordie, okay!'; 
+var words = 'd**n shordie, okay!'; 
 
 function preload() {
   // Ensure the .ttf or .otf font stored in the assets directory
@@ -16,7 +16,6 @@ function preload() {
 function setup() {
   createCanvas(710, 400, WEBGL);
   textFont(font);
-  textSize(15);
   textAlign(RIGHT);
 }
 
@@ -28,6 +27,12 @@ function draw() {
   stroke('black');
   strokeWeight(2);
   rect(-340,90,200,75)
+    
+ /*dialogue*/    
+  textSize(30);
+  fill('black');
+  noStroke();
+  text(words, -160, 150);
 
   /*char 2 head*/
   noFill()
@@ -173,10 +178,4 @@ function draw() {
   stroke('blue');
   fill('white');
   ellipse(197,70, 15, 70)   
-   
-  /*dialogue*/    
-  textSize(20);
-  fill('black');
-  noStroke();
-  text(words, 100, 50);
 }
